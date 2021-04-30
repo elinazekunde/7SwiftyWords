@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         scoreLabel.translatesAutoresizingMaskIntoConstraints = false
         scoreLabel.textAlignment = .right
         scoreLabel.text = "Score: 0"
+        scoreLabel.font = UIFont.boldSystemFont(ofSize: 20)
         view.addSubview(scoreLabel)
         
         cluesLabel = UILabel()
@@ -64,12 +65,14 @@ class ViewController: UIViewController {
         let submit = UIButton(type: .system)
         submit.translatesAutoresizingMaskIntoConstraints = false
         submit.setTitle("SUBMIT", for: .normal)
+        submit.tintColor = UIColor.rgb(red: 0, green: 87, blue: 128)
         submit.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
         view.addSubview(submit)
         
         let clear = UIButton(type: .system)
         clear.translatesAutoresizingMaskIntoConstraints = false
         clear.setTitle("CLEAR", for: .normal)
+        clear.tintColor = UIColor.rgb(red: 0, green: 87, blue: 128)
         clear.addTarget(self, action: #selector(clearTapped), for: .touchUpInside)
         view.addSubview(clear)
         
@@ -111,8 +114,9 @@ class ViewController: UIViewController {
         for row in 0..<4 {
             for column in 0..<5 {
                 let letterButton = UIButton(type: .system)
-                letterButton.titleLabel?.font = UIFont.systemFont(ofSize: 36)
+                letterButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 36)
                 letterButton.setTitle("WWW", for: .normal)
+                letterButton.tintColor = UIColor.rgb(red: 0, green: 87, blue: 128)
                 letterButton.addTarget(self, action: #selector(letterTapped), for: .touchUpInside)
                 
                 let frame = CGRect(x: column * width, y: row * heigth, width: width, height: heigth)
@@ -233,4 +237,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
